@@ -32,7 +32,7 @@ const WeatherContainer = ({ weather }) => {
         <h3 className="font-regular text-3xl flex fixed top-[200px] items-center w-[150px] h-[50px] p-2 sm:text-4xl">
           {changeUnitTemp(weather.main.temp)}
         </h3>
-        <div className="fixed ml-[125px] top-[170px] sm:ml-[140px] sm:top-[160px]">
+        <div className="fixed ml-[125px]  top-[160px] sm:ml-[140px] sm:top-[160px]">
           <img className="sm:w-[185px] sm:h-[185px]" src={weatherIcons[weather.weather[0].main]} alt="" />
         </div>
 
@@ -53,9 +53,9 @@ const WeatherContainer = ({ weather }) => {
             value={weather.main.pressure}
           />
 
-          <h5 className="font-regular text-xl p-1 sm:text-3xl">{weather.name}, {weather.sys.country}</h5>
+          <h5 className="font-regular text-xl p-1 sm:text-xl">{weather.name}, {weather.sys.country}</h5>
 
-          <article className="relative mx-[170px] bottom-[28px] w-[120px] sm:mx-[200px] sm:bottom-[33px] ">
+          <article className="relative mx-[135px] bottom-[30px] w-[150px] sm:mx-[180px] sm:bottom-[33px] ">
             <h5 className="font-regular text-base sm:text-xl " >
               {weather.weather[0].description}
             </h5>
