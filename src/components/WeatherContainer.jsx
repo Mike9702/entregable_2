@@ -1,7 +1,6 @@
 import { useState } from "react";
 import WeatherStat from "./WeatherStat";
 
-
 const WeatherContainer = ({ weather }) => {
   const [isCelsius, setIsCelsius] = useState(true);
 
@@ -20,30 +19,33 @@ const WeatherContainer = ({ weather }) => {
   };
 
   const weatherIcons = {
-    "Drizzle": "/img/rain.svg",
-    "Thunderstorm": "/img/thunderStorm.svg",
-    "Clear": "/img/clearSky.svg",
-    "Clouds": "/img/fewClouds.svg",
-    "Mist": "/img/mist.svg",
-    "Rain": "/img/showerRain.svg",
-    "Snow": "/img/snow.svg",
-    
-  }
+    Drizzle: "/img/rain.svg",
+    Thunderstorm: "/img/thunderStorm.svg",
+    Clear: "/img/clearSky.svg",
+    Clouds: "/img/fewClouds.svg",
+    Mist: "/img/mist.svg",
+    Rain: "/img/showerRain.svg",
+    Snow: "/img/snow.svg",
+  };
 
-  
   return (
-    <div className="grid grid-rows-[1fr auto] justify-items-center  ">
-      <section className=" min-h-[300px] flex   ">
-        <img className="w-[300px] h-[290px] sm:w-[340px] sm:h-[300px]" src="/img/backgroundInfo.svg" />
+    <>
+      <section className="grid gap-2 justify-items-center">
 
-        <h3 className="font-regular text-3xl flex fixed top-[200px] items-center w-[150px] h-[50px] p-2 sm:text-4xl">
-          {changeUnitTemp(weather.main.temp)}
-        </h3>
-        <div className="fixed ml-[125px]  top-[160px] sm:ml-[140px] sm:top-[160px]">
-          <img className="sm:w-[185px] sm:h-[185px]" src={weatherIcons[weather.weather[0].main]} alt="" />
-        </div>
+        <picture className="absolute ml-[135px] top-[125px] ">
+        <img
+          className="  mx-[135px]  "
+          src={weatherIcons[weather.weather[0].main]}
+          alt=""
+        />
+        </picture>
+        <img src="/img/backgroundInfo.svg" />
+  
+        <article className="absolute  top-[195px] mr-[200px] p-2   ">
+          <h3 className="font-bold text-3xl  ">
+            {changeUnitTemp(weather.main.temp)}
+          </h3>
 
-        <article className="fixed top-[255px] ml-2">
           <WeatherStat
             icon="/img/wind.svg"
             unit="m/s"
@@ -60,23 +62,23 @@ const WeatherContainer = ({ weather }) => {
             value={weather.main.pressure}
           />
 
-          <h5 className="font-regular text-xl p-1 sm:text-xl">{weather.name}, {weather.sys.country}</h5>
-
-          <article className="relative mx-[135px] bottom-[30px] w-[150px] sm:mx-[180px] sm:bottom-[33px] ">
-            <h5 className="font-regular text-base sm:text-xl " >
-              {weather.weather[0].description}
-            </h5>
-          </article>
+          <h5 className="font-regular text-xl p-1 sm:text-xl">
+            {weather.name}, {weather.sys.country}
+          </h5>
         </article>
-      </section>
 
-      <button
-        className=" gap-1  p-[5px] border w-auto  rounded-full text-sm bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 hover:border-none "
-        onClick={handleChangeUnit}
-      >
-        {isCelsius ? "Cambiar a °F" : " Cambiar a °C"}
-      </button>
-    </div>
+        <h5 className=" absolute font-regular text-base bottom-[245px] ml-[130px] ">
+          {weather.weather[0].description}
+        </h5>
+
+        <button
+          className=" ju gap-1  p-[3px] border h-[40px] w-[105px]  rounded-full text-sm bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 hover:border-none "
+          onClick={handleChangeUnit}
+        >
+          {isCelsius ? "Cambiar a °F" : " Cambiar a °C"}
+        </button>
+      </section>
+    </>
   );
 };
 export default WeatherContainer;
