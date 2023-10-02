@@ -1,11 +1,11 @@
 const weatherIcons = {
-    "Drizzle": "/public/stats/rain.svg",
-    "Thunderstorm": "/public/stats/thunderStorm.svg",
-    "Clear": "/public/stats/clearSky.svg",
-    "Clouds": "/public/stats/fewClouds.svg",
-    "Mist": "/public/stats/mist.svg",
-    "Rain": "/public/stats/showerRain.svg",
-    "Snow": "/public/stats/snow.svg",
+    "Drizzle": "/public/img/rain.svg",
+    "Thunderstorm": "/public/img/thunderStorm.svg",
+    "Clear": "/public/img/clearSky.svg",
+    "Clouds": "/public/img/fewClouds.svg",
+    "Mist": "/public/img/mist.svg",
+    "Rain": "/public/img/showerRain.svg",
+    "Snow": "/public/img/snow.svg",
     
   }
   export default weatherIcons

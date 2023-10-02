@@ -21,9 +21,6 @@ const WeatherContainer = ({ weather }) => {
   };
 
   
-
-  console.log(weather);
-
   return (
     <div className="grid grid-rows-[1fr auto] justify-items-center  ">
       <section className=" min-h-[300px] flex   ">
