@@ -34,7 +34,7 @@ const WeatherContainer = ({ weather }) => {
   return (
     <div className="grid grid-rows-[1fr auto] justify-items-center  ">
       <section className=" min-h-[300px] flex   ">
-        <img className="w-[300px] h-[290px] sm:w-[340px] sm:h-[300px]" src="/public/img/backgroundInfo.svg" />
+        <img className="w-[300px] h-[290px] sm:w-[340px] sm:h-[300px]" src="/img/backgroundInfo.svg" />
 
         <h3 className="font-regular text-3xl flex fixed top-[200px] items-center w-[150px] h-[50px] p-2 sm:text-4xl">
           {changeUnitTemp(weather.main.temp)}
