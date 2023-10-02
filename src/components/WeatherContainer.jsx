@@ -20,13 +20,13 @@ const WeatherContainer = ({ weather }) => {
   };
 
   const weatherIcons = {
-    "Drizzle": "/public/img/rain.svg",
-    "Thunderstorm": "/public/img/thunderStorm.svg",
-    "Clear": "/public/img/clearSky.svg",
-    "Clouds": "/public/img/fewClouds.svg",
-    "Mist": "/public/img/mist.svg",
-    "Rain": "/public/img/showerRain.svg",
-    "Snow": "/public/img/snow.svg",
+    "Drizzle": "/img/rain.svg",
+    "Thunderstorm": "/img/thunderStorm.svg",
+    "Clear": "/img/clearSky.svg",
+    "Clouds": "/img/fewClouds.svg",
+    "Mist": "/img/mist.svg",
+    "Rain": "/img/showerRain.svg",
+    "Snow": "/img/snow.svg",
     
   }
 
@@ -45,17 +45,17 @@ const WeatherContainer = ({ weather }) => {
 
         <article className="fixed top-[255px] ml-2">
           <WeatherStat
-            icon="/public/img/wind.svg"
+            icon="/img/wind.svg"
             unit="m/s"
             value={weather.wind.speed}
           />
           <WeatherStat
-            icon="/public/img/humidity.svg"
+            icon="/img/humidity.svg"
             unit="%"
             value={weather.main.humidity}
           />
           <WeatherStat
-            icon="/public/img/pressure.svg"
+            icon="/img/pressure.svg"
             unit="hPa"
             value={weather.main.pressure}
           />
