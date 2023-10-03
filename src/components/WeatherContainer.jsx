@@ -30,18 +30,19 @@ const WeatherContainer = ({ weather }) => {
 
   return (
     <>
-      <section className="grid gap-2 justify-items-center">
+      <section className="grid gap-2 ">
 
-        <picture className="absolute ml-[15px] top-[145px] sm:ml-[135px] sm:top-[145px] ">
+        <picture className="absolute  ml-[15px] top-[165px] sm:ml-[5px] sm:top-[175px] ">
         <img
-          className="  mx-[135px]  "
+          className=" mx-[135px]  "
           src={weatherIcons[weather.weather[0].main]}
           alt=""
         />
         </picture>
-        <img src="/img/backgroundInfo.svg" />
+        
+        <img className="w-[312px] h-[290px]" src="/img/backgroundInfo.svg" />
   
-        <article className="absolute top-[195px] mr-[150px]  sm:top-[195px] sm:mr-[180px] p-2   ">
+        <article className="absolute top-[215px] mr-[150px]  sm:top-[210px] sm:mr-[180px] p-2   ">
           <h3 className="font-bold text-3xl  ">
             {changeUnitTemp(weather.main.temp)}
           </h3>
@@ -67,17 +68,19 @@ const WeatherContainer = ({ weather }) => {
           </h5>
         </article>
 
-        <h5 className=" absolute font-regular text-base bottom-[245px] ml-[130px] sm:bottom-[235px] ">
+        <h5 className=" absolute font-regular text-base bottom-[225px] ml-[160px] sm:bottom-[220px] sm:ml-[150px] ">
           {weather.weather[0].description}
         </h5>
-
-        <button
-          className=" ju gap-1  p-[3px] border h-[40px] w-[105px]  rounded-full text-sm bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 hover:border-none "
+        
+      </section>
+      <article className="absolute justify-items-center text-center  p-[3px] bottom-[120px]">
+<button
+          className="border rounded-full w-[90px] text-sm bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 hover:border-none "
           onClick={handleChangeUnit}
         >
           {isCelsius ? "Cambiar a °F" : " Cambiar a °C"}
         </button>
-      </section>
+</article>
     </>
   );
 };
