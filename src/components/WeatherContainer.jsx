@@ -29,19 +29,21 @@ const WeatherContainer = ({ weather }) => {
   };
 
   return (
-    <section className=" m-1  ">
-      <img className="  w-[312px] h-[290px]" src="/img/backgroundInfo.svg" />
+    <section className=" relative  m-1  ">
+      <img className="w-[312px] " src="/img/backgroundInfo.svg" />
 
-      <article className=" absolute  top-[215px] pl-2">
-        <img
-          className=" absolute top-[-35px] left-[185px]"
-          src={weatherIcons[weather.weather[0].main]}
-          alt=""
-        />
+      <article className="absolute top-[25px] left-[10px]">
+        
         <h3 className="font-bold text-3xl  ">
           {changeUnitTemp(weather.main.temp)}
         </h3>
+      </article>
 
+      <article className="absolute top-[-35px] left-[140px] ">
+      <img src={weatherIcons[weather.weather[0].main]} alt="" />
+      </article>
+
+      <article className=" absolute top-[55px] left-[5px]  m-1">
         <WeatherStat
           icon="/img/wind.svg"
           unit="m/s"
@@ -58,25 +60,26 @@ const WeatherContainer = ({ weather }) => {
           value={weather.main.pressure}
         />
 
-        <h5 className="font-regular text-xl p-1 sm:text-xl">
+        <h5 className="font-regular text-xl p-1 ">
           {weather.name}, {weather.sys.country}
         </h5>
 
-        <article className="absolute left-40 w-36 bottom-[8px]">
+        
+      </article>
+      <article className="absolute left-[165px] top-[165px]">
           <h5 className="font-regular text-base ">
             {weather.weather[0].description}
           </h5>
         </article>
-      </article>
 
-      <article className=" grid justify-items-center bottom-[10px]">
-        <button
-          className="border rounded-full w-[90px] text-sm bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 hover:border-none "
-          onClick={handleChangeUnit}
-        >
-          {isCelsius ? "Cambiar a °F" : " Cambiar a °C"}
-        </button>
-      </article>
+        <article className=" absolute left-[100px]">
+          <button
+            className="border rounded-full w-[90px] text-sm bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 hover:border-none "
+            onClick={handleChangeUnit}
+          >
+            {isCelsius ? "Cambiar a °F" : " Cambiar a °C"}
+          </button>
+        </article>
     </section>
   );
 };
