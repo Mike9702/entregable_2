@@ -32,7 +32,7 @@ const WeatherContainer = ({ weather }) => {
     <>
       <section className="grid gap-2 justify-items-center">
 
-        <picture className="absolute ml-[135px] top-[125px] ">
+        <picture className="absolute ml-[15px] top-[145px] sm:ml-[135px] sm:top-[145px] ">
         <img
           className="  mx-[135px]  "
           src={weatherIcons[weather.weather[0].main]}
@@ -41,7 +41,7 @@ const WeatherContainer = ({ weather }) => {
         </picture>
         <img src="/img/backgroundInfo.svg" />
   
-        <article className="absolute  top-[195px] mr-[200px] p-2   ">
+        <article className="absolute top-[195px] mr-[150px]  sm:top-[195px] sm:mr-[180px] p-2   ">
           <h3 className="font-bold text-3xl  ">
             {changeUnitTemp(weather.main.temp)}
           </h3>
@@ -67,7 +67,7 @@ const WeatherContainer = ({ weather }) => {
           </h5>
         </article>
 
-        <h5 className=" absolute font-regular text-base bottom-[245px] ml-[130px] ">
+        <h5 className=" absolute font-regular text-base bottom-[245px] ml-[130px] sm:bottom-[235px] ">
           {weather.weather[0].description}
         </h5>
 
