@@ -68,7 +68,7 @@ const WeatherContainer = ({ weather }) => {
           </h5>
         </article>
 
-        <h5 className=" absolute font-regular text-base bottom-[225px] ml-[160px] sm:bottom-[220px] sm:ml-[150px] ">
+        <h5 className=" absolute font-regular text-base bottom-[225px] ml-[180px] sm:bottom-[220px] sm:ml-[150px] ">
           {weather.weather[0].description}
         </h5>
         
