@@ -25,8 +25,8 @@ function App() {
   }, []);
 
   return (
-    <main className="font-['lato'] font-regular backgroundApp min-h-screen text-white text-2xl flex justify-items-center justify-center items-center p-1">
-      {weather === null ? <Loader /> : <WeatherContainer weather={weather} /> }
+    <main className=" grid justify-items-center items-center justify-center font-['lato'] font-regular backgroundApp min-h-screen text-white text-2xl p-2   ">
+      {weather === null ? <Loader /> :   <WeatherContainer weather={weather}/> } 
     </main>
   );
 }

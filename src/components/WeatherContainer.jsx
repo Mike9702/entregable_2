@@ -29,59 +29,55 @@ const WeatherContainer = ({ weather }) => {
   };
 
   return (
-    <>
-      <section className="grid gap-2 ">
+    <section className=" m-1  ">
+      <img className="  w-[312px] h-[290px]" src="/img/backgroundInfo.svg" />
 
-        <picture className="absolute  ml-[15px] top-[165px] sm:ml-[5px] sm:top-[175px] md:ml-[5px] md:top-[175px] lg:ml-[5px] lg:top-[175px] xl:ml-[5px] xl:top-[175px] 2xl:ml-[5px] 2xl:top-[175px] ">
+      <article className=" absolute  top-[215px] pl-2">
         <img
-          className=" mx-[135px]  "
+          className=" absolute top-[-35px] left-[185px]"
           src={weatherIcons[weather.weather[0].main]}
           alt=""
         />
-        </picture>
-        
-        <img className="w-[312px] h-[290px]" src="/img/backgroundInfo.svg" />
-  
-        <article className="absolute top-[215px] mr-[150px]  sm:top-[210px] sm:mr-[180px] p-2  md:top-[210px] md:mr-[180px] lg:top-[210px] lg:mr-[180px] xl:top-[210px] xl:mr-[180px] 2xl:top-[210px] 2xl:mr-[180px]">
-          <h3 className="font-bold text-3xl  ">
-            {changeUnitTemp(weather.main.temp)}
-          </h3>
+        <h3 className="font-bold text-3xl  ">
+          {changeUnitTemp(weather.main.temp)}
+        </h3>
 
-          <WeatherStat
-            icon="/img/wind.svg"
-            unit="m/s"
-            value={weather.wind.speed}
-          />
-          <WeatherStat
-            icon="/img/humidity.svg"
-            unit="%"
-            value={weather.main.humidity}
-          />
-          <WeatherStat
-            icon="/img/pressure.svg"
-            unit="hPa"
-            value={weather.main.pressure}
-          />
+        <WeatherStat
+          icon="/img/wind.svg"
+          unit="m/s"
+          value={weather.wind.speed}
+        />
+        <WeatherStat
+          icon="/img/humidity.svg"
+          unit="%"
+          value={weather.main.humidity}
+        />
+        <WeatherStat
+          icon="/img/pressure.svg"
+          unit="hPa"
+          value={weather.main.pressure}
+        />
 
-          <h5 className="font-regular text-xl p-1 sm:text-xl">
-            {weather.name}, {weather.sys.country}
+        <h5 className="font-regular text-xl p-1 sm:text-xl">
+          {weather.name}, {weather.sys.country}
+        </h5>
+
+        <article className="absolute left-40 w-36 bottom-[8px]">
+          <h5 className="font-regular text-base ">
+            {weather.weather[0].description}
           </h5>
         </article>
+      </article>
 
-        <h5 className=" absolute font-regular text-base bottom-[225px] ml-[180px] sm:bottom-[220px] sm:ml-[150px] md:bottom-[220px] md:ml-[150px] lg:bottom-[220px] lg:ml-[150px] xl:bottom-[220px] xl:ml-[150px] 2xl:bottom-[220px] 2xl:ml-[150px]">
-          {weather.weather[0].description}
-        </h5>
-        
-      </section>
-      <article className="absolute justify-items-center text-center  p-[3px] bottom-[120px]">
-<button
+      <article className=" grid justify-items-center bottom-[10px]">
+        <button
           className="border rounded-full w-[90px] text-sm bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 hover:border-none "
           onClick={handleChangeUnit}
         >
           {isCelsius ? "Cambiar a °F" : " Cambiar a °C"}
         </button>
-</article>
-    </>
+      </article>
+    </section>
   );
 };
 export default WeatherContainer;
