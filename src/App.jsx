@@ -41,30 +41,11 @@ function App() {
    
   return (
     <main className="grid justify-items-center items-center  font-['lato'] font-regular backgroundApp min-h-screen text-white text-2xl p-2   ">
-      <section className=" absolute top-16 ">
-      <div className=" flex ">
-        <form
-        onSubmit={handleSubmit}
-           
-          className="flex justify-center  overflow-hidden w-[225px]  h-[40px] "
-          
-        >
-          <input
-            name="searchCity"
-            placeholder="Search City..."
-            className="border w-[120px] h-[35px] outline-none rounded-s-md text-black text-base  p-1"
-            type="text"
-            
-          />
-          <button  className="bg-gray-800  border h-[35px] w-[63px] items-center text-base rounded-e-md grid hover:bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 ">Search</button>
-        </form>
-        </div> 
-      </section>
+        
 
       {weather === null ? <Loader /> : <WeatherContainer weather={weather} />    }
 
     
-           
     </main>
   );
 }

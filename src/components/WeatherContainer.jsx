@@ -1,7 +1,7 @@
 import { useState } from "react";
 import WeatherStat from "./WeatherStat";
 
-const WeatherContainer = ({ weather}) => {
+const WeatherContainer = ({ weather, handleSubmit}) => {
   const [isCelsius, setIsCelsius] = useState(true);
 
   const changeUnitTemp = (temp) => {
@@ -32,7 +32,25 @@ const WeatherContainer = ({ weather}) => {
 
   return (
 
-    <section className=" relative  m-1  ">
+    <section className=" relative m-1  ">
+
+<div className=" absolute  -top-[120px] left-9">
+        <form
+        onSubmit={handleSubmit}
+           
+          className="absolute flex justify-center item overflow-hidden w-[225px]  h-[40px] "
+          
+        >
+          <input
+            name="searchCity"
+            placeholder="Search City..."
+            className="border w-[120px] h-[35px] outline-none rounded-s-md text-black text-base  p-1"
+            type="text"
+            
+          />
+          <button  className="bg-gray-800  border h-[35px] w-[63px] items-center text-base rounded-e-md grid hover:bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 ">Search</button>
+        </form>
+        </div> 
 
       
       <img className="w-[312px] " src="/img/backgroundInfo.svg" />
