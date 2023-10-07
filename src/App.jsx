@@ -43,7 +43,7 @@ function App() {
     <main className="grid justify-items-center items-center  font-['lato'] font-regular backgroundApp min-h-screen text-white text-2xl p-2   ">
         
 
-      {weather === null ? <Loader /> : <WeatherContainer weather={weather} />    }
+      {weather === null ? <Loader /> : <WeatherContainer weather={weather} handleSubmit={handleSubmit} />    }
 
     
     </main>

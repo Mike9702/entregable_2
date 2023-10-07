@@ -38,17 +38,17 @@ const WeatherContainer = ({ weather, handleSubmit}) => {
         <form
         onSubmit={handleSubmit}
            
-          className="absolute flex justify-center item overflow-hidden w-[225px]  h-[40px] "
+          className="absolute flex gap-2 justify-center item overflow-hidden w-[225px]  h-[40px] "
           
         >
           <input
             name="searchCity"
             placeholder="Search City..."
-            className="border w-[120px] h-[35px] outline-none rounded-s-md text-black text-base  p-1"
+            className="border w-[120px] h-[35px] outline-none rounded-md text-black text-base  p-1"
             type="text"
             
           />
-          <button  className="bg-gray-800  border h-[35px] w-[63px] items-center text-base rounded-e-md grid hover:bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 ">Search</button>
+          <button  className="bg-gray-800  border h-[35px] w-[63px] items-center text-base rounded-md grid hover:bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 ">Search</button>
         </form>
         </div> 
 
@@ -68,7 +68,7 @@ const WeatherContainer = ({ weather, handleSubmit}) => {
       <img src={weatherIcons[weather.weather[0].main]} alt="" />
       </article>
 
-      <article className=" absolute top-[55px] left-[5px]  m-1">
+      <article className=" absolute top-[60px] left-[5px]  m-1 sm:top-[65px]">
         <WeatherStat
           icon="/img/wind.svg"
           unit="m/s"
@@ -85,7 +85,7 @@ const WeatherContainer = ({ weather, handleSubmit}) => {
           value={weather.main.pressure}
         />
 
-        <h5 className="font-regular text-xl p-1 ">
+        <h5 className="font-regular  text-base p-1 sm:text-xl">
 
          {weather.name}, {weather.sys.country}
               
@@ -94,8 +94,8 @@ const WeatherContainer = ({ weather, handleSubmit}) => {
 
         
       </article>
-      <article className="absolute left-[185px] top-[165px]">
-          <h5 className="font-regular text-base ">
+      <article className=" absolute w-[110px]  left-[185px] top-[165px] sm:top-[135px] sm:w-[118px] ">
+          <h5 className="font-regular text-center text-base ">
             {weather.weather[0].description}
           </h5>
         </article>
