@@ -1,7 +1,7 @@
 import { useState } from "react";
 import WeatherStat from "./WeatherStat";
 
-const WeatherContainer = ({ weather }) => {
+const WeatherContainer = ({ weather}) => {
   const [isCelsius, setIsCelsius] = useState(true);
 
   const changeUnitTemp = (temp) => {
@@ -17,22 +17,29 @@ const WeatherContainer = ({ weather }) => {
   const handleChangeUnit = () => {
     setIsCelsius(!isCelsius);
   };
-
+  
   const weatherIcons = {
     Drizzle: "/img/rain.svg",
     Thunderstorm: "/img/thunderStorm.svg",
     Clear: "/img/clearSky.svg",
-    Clouds: "/img/fewClouds.svg",
+    Clouds: "/img/scatteredClouds.svg", 
     Mist: "/img/mist.svg",
     Rain: "/img/showerRain.svg",
     Snow: "/img/snow.svg",
   };
 
+  
+
   return (
+
     <section className=" relative  m-1  ">
+
+      
       <img className="w-[312px] " src="/img/backgroundInfo.svg" />
 
       <article className="absolute top-[25px] left-[10px]">
+
+    
         
         <h3 className="font-bold text-3xl  ">
           {changeUnitTemp(weather.main.temp)}
@@ -61,12 +68,15 @@ const WeatherContainer = ({ weather }) => {
         />
 
         <h5 className="font-regular text-xl p-1 ">
-          {weather.name}, {weather.sys.country}
+
+         {weather.name}, {weather.sys.country}
+              
+  
         </h5>
 
         
       </article>
-      <article className="absolute left-[165px] top-[165px]">
+      <article className="absolute left-[185px] top-[165px]">
           <h5 className="font-regular text-base ">
             {weather.weather[0].description}
           </h5>
@@ -74,13 +84,14 @@ const WeatherContainer = ({ weather }) => {
 
         <article className=" absolute left-[100px]">
           <button
-            className="border rounded-full w-[90px] text-sm bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 hover:border-none "
+            className="border rounded-full w-[90px] text-sm backgroundApp hover:bg-gradient-to-l hover:from-pink-500 hover:to-blue-500 hover:border-none "
             onClick={handleChangeUnit}
           >
             {isCelsius ? "Cambiar a °F" : " Cambiar a °C"}
           </button>
         </article>
     </section>
+
   );
 };
 export default WeatherContainer;
